@@ -175,6 +175,7 @@ i.e Cadence IES command for compile: ncverilog +access+rwc -compile fa.v
 
 
 
+![WhatsApp Image 2024-10-04 at 22 10 06_055ac42e](https://github.com/user-attachments/assets/9c721c5b-bb86-446d-8778-98b6c1ebb032)
 
 
 
