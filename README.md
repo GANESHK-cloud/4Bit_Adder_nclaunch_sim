@@ -1,8 +1,4 @@
-#NAME : GANESH K
-#REG NO: 212222060057
-
-
-# EXP1: 4 Bit Adder functionality verification
+[full_add.v.txt](https://github.com/user-attachments/files/17266149/full_add.v.txt)[full_add_4bit.v.txt](https://github.com/user-attachments/files/17266146/full_add_4bit.v.txt)# EXP1: 4 Bit Adder functionality verification
 
 ## Aim:
 To write a verilog code for 4bit adder and verify the functionality using Test bench.
@@ -60,6 +56,40 @@ Note : File name should be with HDL Extension
 •	fa_4bit.v → Top Module for Adding 4-bit Inputs. 
 
 •	fa_4bit_test.v → Test bench 
+
+full_add.vmodule full_adder(A,B,CIN,S,COUT);
+input A,B,CIN;
+output S,COUT;
+assign S=A^B^CIN;
+assign COUT=(A&B) | (CIN&(A^B));
+endmodule
+
+module fulladd_4bit(A,B,C0,S,C4);
+input [3:0] A,B;
+input C0;
+output [3:0] S;
+output C4;
+wire C1,C2,C3;
+full_adder fa0 (A[0],B[0],C0,S[0],C1);
+full_adder fa1 (A[1],B[1],C1,S[1],C2);
+full_adder fa2 (A[2],B[2],C2,S[2],C3);
+full_adder fa3 (A[3],B[3],C3,S[3],C4);
+endmodule
+
+module test_4bit;
+reg [3:0] A;
+reg [3:0] B; reg C0;
+wire [3:0] S; wire C4;
+fulladd_4bit dut (A,B,C0,S,C4);
+initial 
+begin
+A=4'b0011;B=4'b0011;C0=1'b0;
+#10;  A=4'b1011;B=4'b0111;C0=1'b1;
+#10; A=4'b1111;B=4'b1111;C0=1'b1;
+#10;
+end initial
+#50 $finish;
+endmodule
 
 ## Functional Simulation: 
 
