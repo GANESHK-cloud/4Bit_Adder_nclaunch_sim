@@ -1,16 +1,18 @@
-[full_add.v.txt](https://github.com/user-attachments/files/17266149/full_add.v.txt)[full_add_4bit.v.txt](https://github.com/user-attachments/files/17266146/full_add_4bit.v.txt)# EXP1: 4 Bit Adder functionality verification
+ EXP1: 4 Bit Adder functionality verification
 
-## Aim:
+
+
+Aim:
 To write a verilog code for 4bit adder and verify the functionality using Test bench.
 
  Write Verilog Code
 
  Verify the Functionality using Test-bench.
 
-## Tool Required: 
+Tool Required: 
 Functional Simulation: nclaunch Simulator (nclaunch) 
 
-## 4-bit Adder Design:
+4-bit Adder Design:
 To construct a 4-bit adder, need to chain together four 1-bit full adders. Each full adder computes the sum and carry for one bit of the two numbers. The carry-out from one adder feeds into the carry-in of the next adder in the sequence. This process adds the two 4-bit numbers bit by bit, with the carry propagating through each stage, resulting in a final sum and carry-out at the end.
 
 To design a 1-bit full adder, the first step is to create a truth table that represents all possible combinations of the inputs (A, B, and CIN) and the corresponding outputs (Sum(S) and COUT).
@@ -21,9 +23,9 @@ Here’s the truth table for a 1-bit full adder:
 
 ![tt](https://github.com/user-attachments/assets/0b3ab24f-1d7e-4a01-80ce-5e7406f4082b)
 
-### Fig 1 : Diagram and truth table of full adder
+Fig 1 : Diagram and truth table of full adder
 
-### Logic Expressions:
+Logic Expressions:
 
 1.	Sum (S):
    
@@ -37,9 +39,9 @@ COUT=(A&B) | (CIN&(A^B))
 
 ![image](https://github.com/user-attachments/assets/7d6fa554-2614-4f19-aa68-65c9e6153caa)
 
-### Fig 2:Diagram of 4 Bit Adder
+Fig 2:Diagram of 4 Bit Adder
 
-## Creating Source Codes 
+Creating Source Codes 
 
 	In the Terminal, type gedit <filename>.v (ex: gedit 4bitadder.v). 
 
@@ -47,7 +49,7 @@ COUT=(A&B) | (CIN&(A^B))
 
 Note : File name should be with HDL Extension
 
-### a) Verify the Functionality 
+a) Verify the Functionality 
 
 	Three Codes shall be written for implementation of 4-bit Adder as follows, 
 
@@ -91,7 +93,7 @@ end initial
 #50 $finish;
 endmodule
 
-## Functional Simulation: 
+Functional Simulation: 
 
 	Invoke the cadence environment by type the below commands 
 
@@ -106,7 +108,7 @@ endmodule
 
 ![WhatsApp Image 2024-10-05 at 11 16 36_3f4510a6](https://github.com/user-attachments/assets/ce625fc8-4a88-4ba9-bb7a-206d5dd48907)
 
-### Fig 3:Invoke the Cadence Environment
+Fig 3:Invoke the Cadence Environment
 
 	To Launch Simulation tool 
 
@@ -120,7 +122,7 @@ or
 
 ![WhatsApp Image 2024-10-05 at 11 16 37_3eab63a2](https://github.com/user-attachments/assets/d0ca135f-357b-48ec-913f-ed11e6b21d7a)
 
-### Fig 4:Setting Multi-step simulation
+Fig 4:Setting Multi-step simulation
 
 	Select Multiple Step and then select “Create cds.lib File” .
 
@@ -128,7 +130,7 @@ or
 
 ![WhatsApp Image 2024-10-05 at 11 16 37_1fa3f7ef](https://github.com/user-attachments/assets/684056d0-c61d-4bcb-a32a-27ad49fcecd5)
 
-### Fig 5:cds.lib file Creation
+Fig 5:cds.lib file Creation
 
 	Save cds.lib file and select the correct option for cds.lib file format based on the HDL Language and Libraries used. 
 
@@ -140,7 +142,7 @@ or
 
 ![image](https://github.com/user-attachments/assets/781b297a-11e9-4140-89c5-ee3b0d15bbd4)
 
-### Fig 6: Selection of Don’t include any libraries
+Fig 6: Selection of Don’t include any libraries
 
 	A ‘NCLaunch window’ appears as shown in figure below 
 
@@ -152,9 +154,9 @@ or
 
 ![WhatsApp Image 2024-10-05 at 11 14 10_1b59d771](https://github.com/user-attachments/assets/0067d8fd-c9fe-4965-91c8-38305084578a)
 
-### Fig 7: Nclaunch Window
+ Fig 7: Nclaunch Window
 
-## Step 1: Compilation:– Process to check the correct Verilog language syntax and usage 
+Step 1: Compilation:– Process to check the correct Verilog language syntax and usage 
 
 	Inputs: Supplied are Verilog design and test bench codes 
 
@@ -173,7 +175,7 @@ i.e Cadence IES command for compile: ncverilog +access+rwc -compile fa.v
 
 ![WhatsApp Image 2024-10-05 at 11 14 10_1b59d771](https://github.com/user-attachments/assets/184d623c-6b8b-4ff0-adad-5f9c62feecc1)
 
-### Fig 8: Compiled database in worklib
+ Fig 8: Compiled database in worklib
 
 	After compilation it will come under worklib you can see in right side window
 
@@ -181,7 +183,7 @@ i.e Cadence IES command for compile: ncverilog +access+rwc -compile fa.v
 
 	The cds.lib file is an ASCII text file. It defines which libraries are accessible and where they are located. It contains statements that map logical library names to their physical directory paths. For this Design, you will define a library called “worklib”
 
-## Step 2: Elaboration:– To check the port connections in hierarchical design 
+Step 2: Elaboration:– To check the port connections in hierarchical design 
 	Inputs: Top level design / test bench Verilog codes 
 
 	Outputs: Elaborate database updated in mapped library if successful, generates report else error reported in log file 
@@ -198,9 +200,9 @@ i.e Cadence IES command for compile: ncverilog +access+rwc -compile fa.v
 
 ![WhatsApp Image 2024-10-05 at 11 14 10_1b59d771](https://github.com/user-attachments/assets/0cb28398-8a6e-49a6-9348-e6bf69f66fc5)
 
-### Fig 9: Elaboration Launch Option
+Fig 9: Elaboration Launch Option
 
-## Step 3: Simulation: – Simulate with the given test vectors over a period of time to observe the output behaviour. 
+Step 3: Simulation: – Simulate with the given test vectors over a period of time to observe the output behaviour. 
 
 	Inputs: Compiled and Elaborated top level module name 
 
@@ -211,16 +213,16 @@ i.e Cadence IES command for compile: ncverilog +access+rwc -compile fa.v
 	Steps for simulation – Run the simulation command with simulator options
 
 ![373644273-a52a64bc-a2cb-43b7-8884-248512f356f8](https://github.com/user-attachments/assets/1f568573-6151-42e0-bb30-3d47d4edaed3)
-
-### Fig 10: Design Browser window for simulation
+]
+Fig 10: Design Browser window for simulation
 
 ![373644591-ce5dcf19-178e-41c2-abff-71fce4757d2a](https://github.com/user-attachments/assets/2e7018c3-b059-4b47-a74b-3b28e7907715)
 
-### Fig 11: Launching Simulation Waveform WindowSimulation Waveform Window
+ Fig 11: Launching Simulation Waveform WindowSimulation Waveform Window
 
 ![WhatsApp Image 2024-10-05 at 11 14 10_44553b63](https://github.com/user-attachments/assets/a9314965-0fa6-4e08-9d2d-db2c5bccd6c2)
 
-### Fig 12: Simulation Waveform Window
+Fig 12: Simulation Waveform Window
 
 
 
