@@ -303,6 +303,9 @@ Step 3: Simulation: – Simulate with the given test vectors over a period of ti
 ## Fig 12: Simulation Waveform Window
 
 
+
+
+
 ## Result:
 
   The functionality of a 4-bit adder was successfully verified using a test bench and simulated with the nclaunch tool.
