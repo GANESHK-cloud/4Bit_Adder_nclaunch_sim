@@ -1,4 +1,6 @@
 ## Exp-No:1 - 4 Bit Adder - Write Verilog Code and Verify the Functionality using Test-bench ( Using Frontend tool - nclaunch in cadence).
+
+
 ## Aim:
 
   To write a verilog code for 4bit adder and verify the functionality using Test bench.
@@ -122,6 +124,8 @@ Functional Simulation:
   (The path of cshrc could vary depending on the installation destination)<br>
 
   After this you can see the window like below
+
+
 
 
 ![4](https://github.com/user-attachments/assets/55104cbe-fb85-403a-b9ee-b8a777c59843)
